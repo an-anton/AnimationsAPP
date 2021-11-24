@@ -45,8 +45,8 @@ struct Animation {
                           "easeIn",
                           "easeOut",
                           "easeInOut"]
+        
         let randomNameCurve = namesCurve.randomElement() ?? ""
-      
         return Animation(nameAnimation: randomNameAnim,
                          duration: Float.random(in: 0.5...1),
                          curve: randomNameCurve,
