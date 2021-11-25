@@ -11,6 +11,7 @@ class AnimationViewController: UIViewController {
      
      // MARK: - @IBOutlets
     @IBOutlet var animationView: SpringView!
+    
     @IBOutlet var nameAnimationLabel: SpringLabel!
     @IBOutlet var curveLabel: SpringLabel!
     @IBOutlet var durationLabel: SpringLabel!
@@ -31,46 +32,41 @@ class AnimationViewController: UIViewController {
         let animationObject = Animation.getAnimation()
         
         buttonOutlet.setTitle("Cледующая анимация: \(animationObject.nameAnimation)", for: .normal)
+        presentAnimationView(for: animationView, model: animationObject)
         
-        animationView.animation = animationObject.nameAnimation
         nameAnimationLabel.text = "Название: \(animationView.animation)"
-        nameAnimationLabel.alpha = 1
-        
-        animationView.duration = CGFloat(animationObject.duration)
         durationLabel.text = "Продолжительность: \(String(format: "%.3f", animationView.duration))"
-        durationLabel.alpha = 1
-        
-        animationView.curve = animationObject.curve
         curveLabel.text = "Кривая: \(animationView.curve)"
-        curveLabel.alpha = 1
+        forceLabel.text = """
+    Сила: \(String(format: "%.3f", animationView.force))
+    Поворот: \(String(format: "%.3f", animationView.rotate))
+    """
         
-        animationView.force = CGFloat(animationObject.force)
-        forceLabel.text = "Сила: \(String(format: "%.3f", animationView.force))"
-        forceLabel.alpha = 1
-        animationView.animate()
+
+                        
+
+
+        animationLabels(for: nameAnimationLabel, curveLabel, forceLabel, durationLabel)
+    }
+    private func animationLabels(for labels: SpringLabel...) {
         
-        nameAnimationLabel.animation = "slideUp"
-        nameAnimationLabel.duration = 1
-        nameAnimationLabel.curve = "easeln"
-        nameAnimationLabel.force = 0.9
-        nameAnimationLabel.animate()
+        for label in labels {
+            label.animation = "slideUp"
+            label.duration = 1
+            label.curve = "easeln"
+            label.force = 0.9
+            label.alpha = 1
+            label.animate()
+        }
         
-        curveLabel.animation = "slideUp"
-        curveLabel.duration = 1
-        curveLabel.curve = "easeln"
-        curveLabel.force = 0.9
-        curveLabel.animate()
-        
-        forceLabel.animation = "slideUp"
-        forceLabel.duration = 1
-        forceLabel.curve = "easeln"
-        forceLabel.force = 0.9
-        forceLabel.animate()
-        
-        durationLabel.animation = "slideUp"
-        durationLabel.duration = 1
-        durationLabel.curve = "easeln"
-        durationLabel.force = 0.9
-        durationLabel.animate()
+    }
+    
+    private func presentAnimationView(for view: SpringView, model: Animation) {
+        view.animation = model.nameAnimation
+        view.duration = CGFloat(model.duration)
+        view.curve = model.curve
+        view.force = CGFloat(model.force)
+        view.rotate = CGFloat(model.rotate)
+        view.animate()
     }
 }

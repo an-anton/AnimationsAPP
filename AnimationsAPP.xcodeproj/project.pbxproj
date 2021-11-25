@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		270F8901274E396C00DE272A /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270F8900274E396C00DE272A /* Animation.swift */; };
+		277F5166274F9B840090B0E1 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277F5165274F9B840090B0E1 /* DataManager.swift */; };
 		27E8787B274D9BD700992EB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E8787A274D9BD700992EB2 /* AppDelegate.swift */; };
 		27E8787D274D9BD700992EB2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E8787C274D9BD700992EB2 /* SceneDelegate.swift */; };
 		27E87882274D9BD700992EB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27E87880274D9BD700992EB2 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		270F8900274E396C00DE272A /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		277F5165274F9B840090B0E1 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		27E87877274D9BD700992EB2 /* AnimationsAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationsAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27E8787A274D9BD700992EB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27E8787C274D9BD700992EB2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		277F5167274FA97F0090B0E1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				277F5165274F9B840090B0E1 /* DataManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		27E8786E274D9BD700992EB2 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 		27E87879274D9BD700992EB2 /* AnimationsAPP */ = {
 			isa = PBXGroup;
 			children = (
+				277F5167274FA97F0090B0E1 /* Services */,
 				270F8902274E8C6600DE272A /* Models */,
 				270F8903274E8C7600DE272A /* App */,
 				270F8904274E8C8800DE272A /* ViewControllers */,
@@ -242,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27E8787B274D9BD700992EB2 /* AppDelegate.swift in Sources */,
+				277F5166274F9B840090B0E1 /* DataManager.swift in Sources */,
 				27E8787D274D9BD700992EB2 /* SceneDelegate.swift in Sources */,
 				270F8901274E396C00DE272A /* Animation.swift in Sources */,
 				27E8788F274DA4C700992EB2 /* AnimationViewController.swift in Sources */,
